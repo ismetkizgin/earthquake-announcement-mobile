@@ -1,8 +1,8 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {NavigationContainer} from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
 
-import {Home, Login, Register, Entry} from '../components';
+import { Home, Login, Register, Entry } from '../components';
 const Stack = createStackNavigator();
 
 export const Routes = () => {
@@ -15,16 +15,17 @@ export const Routes = () => {
           options={{
             title: 'Ailem Güvende',
             headerTintColor: 'white',
-            headerStyle: {backgroundColor: 'black'},
+            headerStyle: { backgroundColor: 'black' },
+            headerShown:false
           }}
         />
         <Stack.Screen
-          name="Login"  
+          name="Login"
           component={Login}
           options={{
             title: 'Ailem Güvende',
             headerTintColor: 'white',
-            headerStyle: {backgroundColor: 'black'},
+            headerStyle: { backgroundColor: 'black' },
           }}
         />
         <Stack.Screen
@@ -33,7 +34,7 @@ export const Routes = () => {
           options={{
             title: 'Ailem Güvende',
             headerTintColor: 'white',
-            headerStyle: {backgroundColor: 'black'},
+            headerStyle: { backgroundColor: 'black' },
           }}
         />
         <Stack.Screen
@@ -42,7 +43,7 @@ export const Routes = () => {
           options={{
             title: 'Ailem Güvende',
             headerTintColor: 'white',
-            headerStyle: {backgroundColor: 'black'},
+            headerStyle: { backgroundColor: 'black' },
           }}
         />
       </Stack.Navigator>
