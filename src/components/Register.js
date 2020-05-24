@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import RegisterStyle from '../util/RegisterStyle';
 
-const Register = () => {
+export const Register = () => {
   return (
     <ScrollView>
       <View style={RegisterStyle.main}>
@@ -62,4 +62,3 @@ const Register = () => {
     </ScrollView>
   );
 };
-export default Register;

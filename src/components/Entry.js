@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import EntryStyle from '../util/EntryStyle';
 
-const Entry = ({navigation}) => {
+export const Entry = ({navigation}) => {
   return (
     <View style={EntryStyle.main}>
       <View style={EntryStyle.header}>
@@ -28,4 +28,3 @@ const Entry = ({navigation}) => {
     </View>
   );
 };
-export default Entry;
