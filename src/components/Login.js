@@ -1,28 +1,32 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, TextInput} from 'react-native';
-import LoginStyle from '../util/LoginStyle';
+import { View, Text, TouchableOpacity, TextInput } from 'react-native';
+import { commonStyle, colorStyle } from '../util'
 
-export const Login = ({navigation}) => {
+export const Login = ({ navigation }) => {
   return (
-    <View style={LoginStyle.main}>
-      <Text style={LoginStyle.header}>Giriş Yap</Text>
-      <View style={LoginStyle.textView}>
-        <TextInput style={LoginStyle.textInput} placeholder="T.C. No" />
-        <TextInput style={LoginStyle.textInput} placeholder="Şifre" />
-      </View>
-      <TouchableOpacity style={LoginStyle.button}>
-        <Text
-          onPress={() => navigation.navigate('Main')}
-          style={LoginStyle.buttonText}>
-          GİRİŞ YAP
+    <View style={commonStyle.centerMain}>
+      <View style={[commonStyle.centerContainer, { flex: 1, position: "absolute" }]}>
+        <Text style={commonStyle.h1}>Giriş Yap</Text>
+        <TextInput style={commonStyle.textInput}
+          placeholderTextColor={colorStyle.textColor}
+          placeholder="T.C. No" />
+        <TextInput style={commonStyle.textInput}
+          placeholderTextColor={colorStyle.textColor}
+          placeholder="Şifre" />
+        <TouchableOpacity style={commonStyle.button}>
+          <Text
+            onPress={() => navigation.navigate('Main')}
+            style={commonStyle.buttonText}>
+            GİRİŞ YAP
         </Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text style={LoginStyle.linkText}>Şifremi Unuttum</Text>
-      </TouchableOpacity>
-      <TouchableOpacity>
-        <Text style={LoginStyle.linkText}>Kayıt Ol</Text>
-      </TouchableOpacity>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text style={commonStyle.textLink}>Şifremi Unuttum</Text>
+        </TouchableOpacity>
+        <TouchableOpacity>
+          <Text onPress={ () => {Actions.Register}} style={commonStyle.textLink}>Kayıt Ol</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };

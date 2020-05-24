@@ -6,58 +6,59 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
-import RegisterStyle from '../util/RegisterStyle';
+
+import { commonStyle, colorStyle } from '../util'
 
 export const Register = () => {
   return (
     <ScrollView>
-      <View style={RegisterStyle.main}>
-        <Text style={RegisterStyle.header}>Kayıt Ol</Text>
-        <View style={RegisterStyle.textView}>
+      <View style={commonStyle.centerMain}>
+        <View style={commonStyle.centerContainer}>
+          <Text style={commonStyle.h1}>Kayıt Ol</Text>
           <TextInput
-            style={RegisterStyle.textInput}
+            style={commonStyle.textInput}
             placeholder="T.C. No"
-            placeholderTextColor="white"
+            placeholderTextColor={colorStyle.textColor}
           />
           <TextInput
-            style={RegisterStyle.textInput}
+            style={commonStyle.textInput}
             placeholder="Ad"
-            placeholderTextColor="white"
+            placeholderTextColor={colorStyle.textColor}
           />
           <TextInput
-            style={RegisterStyle.textInput}
+            style={commonStyle.textInput}
             placeholder="Soyad"
-            placeholderTextColor="white"
+            placeholderTextColor={colorStyle.textColor}
           />
           <TextInput
-            style={RegisterStyle.textInput}
+            style={commonStyle.textInput}
             placeholder="Doğum Tarihi"
-            placeholderTextColor="white"
+            placeholderTextColor={colorStyle.textColor}
           />
           <TextInput
-            style={RegisterStyle.textInput}
+            style={commonStyle.textInput}
             placeholder="Kan Grubu"
-            placeholderTextColor="white"
+            placeholderTextColor={colorStyle.textColor}
           />
           <TextInput
-            style={RegisterStyle.textInput}
+            style={commonStyle.textInput}
             placeholder="Konum"
-            placeholderTextColor="white"
+            placeholderTextColor={colorStyle.textColor}
           />
           <TextInput
-            style={RegisterStyle.textInput}
+            style={commonStyle.textInput}
             placeholder="Devamlı Hastalık"
-            placeholderTextColor="white"
+            placeholderTextColor={colorStyle.textColor}
           />
           <TextInput
-            style={RegisterStyle.textInput}
+            style={commonStyle.textInput}
             placeholder="Şifre"
-            placeholderTextColor="white"
+            placeholderTextColor={colorStyle.textColor}
           />
-        </View>
-        <TouchableOpacity style={RegisterStyle.button}>
-          <Text style={RegisterStyle.buttonText}>KAYIT OL</Text>
+          <TouchableOpacity style={commonStyle.button}>
+          <Text style={commonStyle.buttonText}>KAYIT OL</Text>
         </TouchableOpacity>
+        </View>
       </View>
     </ScrollView>
   );

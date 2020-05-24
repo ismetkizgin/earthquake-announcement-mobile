@@ -1,29 +1,30 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
-import EntryStyle from '../util/EntryStyle';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 
-export const Entry = ({navigation}) => {
+import { commonStyle } from '../util'
+
+export const Entry = ({ navigation }) => {
   return (
-    <View style={EntryStyle.main}>
-      <View style={EntryStyle.header}>
+    <View style={commonStyle.centerMain}>
+      <View style={commonStyle.centerContainer}>
         <Image
           source={require('../assets/icon.png')}
-          style={EntryStyle.image}
+          style={commonStyle.image}
         />
-        <Text style={EntryStyle.text}>DEPREMİN FARKINA VAR</Text>
-        <Text style={EntryStyle.text}>ÖNLEMİNİ AL!</Text>
+        <Text style={commonStyle.text}>DEPREMİN FARKINA VAR</Text>
+        <Text style={commonStyle.text}>ÖNLEMİNİ AL!</Text>
       </View>
-      <TouchableOpacity style={EntryStyle.button}>
+      <TouchableOpacity style={commonStyle.button}>
         <Text
           onPress={() => navigation.navigate('Login')}
-          style={EntryStyle.buttonText}>
+          style={commonStyle.buttonText}>
           GİRİŞ YAP
         </Text>
       </TouchableOpacity>
       <TouchableOpacity
         onPress={() => navigation.navigate('Register')}
-        style={EntryStyle.button}>
-        <Text style={EntryStyle.buttonText}>KAYIT OL</Text>
+        style={commonStyle.button}>
+        <Text style={commonStyle.buttonText}>KAYIT OL</Text>
       </TouchableOpacity>
     </View>
   );
