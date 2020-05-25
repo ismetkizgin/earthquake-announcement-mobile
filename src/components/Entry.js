@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 
-import { commonStyle } from '../util'
+import {commonStyle} from '../util';
 
-export const Entry = ({ navigation }) => {
+export const Entry = ({navigation}) => {
   return (
     <View style={commonStyle.centerMain}>
       <View style={commonStyle.centerContainer}>

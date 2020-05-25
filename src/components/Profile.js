@@ -2,19 +2,23 @@ import React from 'react';
 import {
   View,
   Text,
-  ScrollView,
+  Image,
   TouchableOpacity,
+  ScrollView,
   TextInput,
 } from 'react-native';
 
 import {commonStyle, colorStyle} from '../util';
 
-export const Register = () => {
+export const Profile = ({navigation}) => {
   return (
     <ScrollView>
       <View style={commonStyle.centerMain}>
         <View style={commonStyle.centerContainer}>
-          <Text style={commonStyle.h1}>Kayıt Ol</Text>
+          <Image
+            source={require('../assets/icon.png')}
+            style={commonStyle.image}
+          />
           <TextInput
             style={commonStyle.textInput}
             placeholder="T.C. No"
@@ -56,7 +60,7 @@ export const Register = () => {
             placeholderTextColor={colorStyle.textColor}
           />
           <TouchableOpacity style={commonStyle.button}>
-            <Text style={commonStyle.buttonText}>KAYIT OL</Text>
+            <Text style={commonStyle.buttonText}>KAYDET</Text>
           </TouchableOpacity>
         </View>
       </View>

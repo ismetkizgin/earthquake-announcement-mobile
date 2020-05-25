@@ -1,30 +1,43 @@
 import React from 'react';
-import { View, Text, TouchableOpacity, TextInput } from 'react-native';
-import { commonStyle, colorStyle } from '../util'
+import {View, Text, TouchableOpacity, TextInput} from 'react-native';
+import {StackActions} from '@react-navigation/native';
 
-export const Login = ({ navigation }) => {
+import {commonStyle, colorStyle} from '../util';
+
+export const Login = ({navigation}) => {
   return (
     <View style={commonStyle.centerMain}>
-      <View style={[commonStyle.centerContainer, { flex: 1, position: "absolute" }]}>
+      <View
+        style={[commonStyle.centerContainer, {flex: 1, position: 'absolute'}]}>
         <Text style={commonStyle.h1}>Giriş Yap</Text>
-        <TextInput style={commonStyle.textInput}
+        <TextInput
+          style={commonStyle.textInput}
           placeholderTextColor={colorStyle.textColor}
-          placeholder="T.C. No" />
-        <TextInput style={commonStyle.textInput}
+          placeholder="T.C. No"
+        />
+        <TextInput
+          style={commonStyle.textInput}
           placeholderTextColor={colorStyle.textColor}
-          placeholder="Şifre" />
+          placeholder="Şifre"
+        />
         <TouchableOpacity style={commonStyle.button}>
           <Text
-            onPress={() => navigation.navigate('Main')}
+            onPress={() => navigation.dispatch(StackActions.replace('drawer'))}
             style={commonStyle.buttonText}>
             GİRİŞ YAP
-        </Text>
+          </Text>
         </TouchableOpacity>
         <TouchableOpacity>
           <Text style={commonStyle.textLink}>Şifremi Unuttum</Text>
         </TouchableOpacity>
         <TouchableOpacity>
-          <Text onPress={ () => {Actions.Register}} style={commonStyle.textLink}>Kayıt Ol</Text>
+          <Text
+            onPress={() => {
+              navigation.dispatch(StackActions.replace('drawer'));
+            }}
+            style={commonStyle.textLink}>
+            Kayıt Ol
+          </Text>
         </TouchableOpacity>
       </View>
     </View>
