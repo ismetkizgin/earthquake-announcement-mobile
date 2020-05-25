@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
@@ -13,8 +13,14 @@ import {
   Contacts,
 } from '../components';
 import {RescueWorkListView} from '../components/RescueWorkListView';
+
+import { Intro } from '../pages'
+
+const IntroStack = createStackNavigator();
 const Stack = createStackNavigator();
+const SecondStack = createStackNavigator();
 const Drawer = createDrawerNavigator();
+
 const DrawerNavigator = () => (
   <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
     <Drawer.Screen
@@ -56,7 +62,6 @@ const DrawerNavigator = () => (
   </Drawer.Navigator>
 );
 
-const SecondStack = createStackNavigator();
 const StackNavigator = () => {
   return (
     <SecondStack.Navigator>
@@ -92,22 +97,38 @@ const StackNavigator = () => {
   );
 };
 
-export const Routes = () => {
-  //  const [state, setState] = useState('Auth');
-  // let state = 'drawer'
-  //   useEffect (() => {
-  //     state = 'drawer';
-  //     setState('drawer')
-  //   })
+const IntroNavigator = () => {
+  return (
+    <IntroStack.Navigator>
+      <IntroStack.Screen
+        name="Intro"
+        component={Intro}
+        options={{
+          title: 'Ailem Güvende',
+          headerTintColor: 'white',
+          headerStyle: {backgroundColor: 'black'},
+          headerShown: false,
+        }}
+      />
+    </IntroStack.Navigator>
+  );
+};
 
-  //....
-  /*
-  async-storage 
-  lgin olduktan sonra bilgileri async storega'a set et
-    */
+export const Routes = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Auth">
+      <Stack.Navigator initialRouteName="Intro">
+      <Stack.Screen
+          name="Intro"
+          component={IntroNavigator}
+          options={{
+            title: 'Ailem Güvende',
+            headerTintColor: 'white',
+            headerStyle: {backgroundColor: 'black'},
+            headerShown: false,
+          }}
+        />
+
         <Stack.Screen
           name="Auth"
           component={StackNavigator}
