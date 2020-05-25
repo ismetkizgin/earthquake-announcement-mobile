@@ -7,7 +7,7 @@ import {
   TextInput,
 } from 'react-native';
 
-import { commonStyle, colorStyle } from '../util'
+import {commonStyle, colorStyle} from '../util';
 
 export const Register = () => {
   return (
@@ -56,8 +56,8 @@ export const Register = () => {
             placeholderTextColor={colorStyle.textColor}
           />
           <TouchableOpacity style={commonStyle.button}>
-          <Text style={commonStyle.buttonText}>KAYIT OL</Text>
-        </TouchableOpacity>
+            <Text style={commonStyle.buttonText}>KAYIT OL</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </ScrollView>
