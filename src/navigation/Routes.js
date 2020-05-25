@@ -1,15 +1,39 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import { Home, Login, Register, Entry } from '../components';
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+const DrawerNavigator = () => (
+    <Drawer.Navigator>
+       <Drawer.Screen
+          name="Main"
+          component={Home}
+          options={{
+            title: 'Ailem Güvende',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: 'black' },
+          }}
+        />
+         <Drawer.Screen
+          name="secondScreen"
+          component={Home}
+          options={{
+            title: 'Ailem Güvende',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: 'black' },
+          }}
+        />
+    </Drawer.Navigator>
+  )
 
-export const Routes = () => {
+const SecondStack =  createStackNavigator();
+const StackNavigator = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
+    <SecondStack.Navigator>
+      <SecondStack.Screen
           name="Entry"
           component={Entry}
           options={{
@@ -19,7 +43,7 @@ export const Routes = () => {
             headerShown:false
           }}
         />
-        <Stack.Screen
+        <SecondStack.Screen
           name="Login"
           component={Login}
           options={{
@@ -28,7 +52,7 @@ export const Routes = () => {
             headerStyle: { backgroundColor: 'black' },
           }}
         />
-        <Stack.Screen
+        <SecondStack.Screen
           name="Register"
           component={Register}
           options={{
@@ -37,16 +61,50 @@ export const Routes = () => {
             headerStyle: { backgroundColor: 'black' },
           }}
         />
+    </SecondStack.Navigator>
+  )
+}
+
+export const Routes = () => {
+//  const [state, setState] = useState('Auth');
+// let state = 'drawer'
+//   useEffect (() => {
+//     state = 'drawer';
+//     setState('drawer')
+//   })
+  
+    //....
+    /*
+  async-storage 
+  lgin olduktan sonra bilgileri async storega'a set et
+    */
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Auth">
+
         <Stack.Screen
-          name="Main"
-          component={Home}
+          name="Auth"
+          component={StackNavigator}
           options={{
             title: 'Ailem Güvende',
             headerTintColor: 'white',
             headerStyle: { backgroundColor: 'black' },
-          }}
-        />
+            headerShown:false
+          }} />
+
+        <Stack.Screen
+          name="drawer"
+          component={DrawerNavigator}
+          options={{
+            title: 'Ailem Güvende',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: 'black' },
+            headerShown:false
+          }} />
+       
+       
       </Stack.Navigator>
+     
     </NavigationContainer>
   );
 };
