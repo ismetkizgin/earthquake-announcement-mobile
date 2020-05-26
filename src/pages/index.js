@@ -8,3 +8,4 @@ export * from './InstantEarthquakes';
 export * from './EmergencyPoints';
 export * from './RescueWorks';
 export * from './Profile';
+export * from './Home';

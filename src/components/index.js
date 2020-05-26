@@ -1,4 +1,3 @@
-export * from './Home';
 export * from './DrawerContent';
 export * from './Contacts';
 export * from './tools/inputText';
