@@ -12,6 +12,7 @@ export const colorStyle = {
   itemColor: 'rgba(255,255,255,0.08)',
   itemTitleColor: '#ffffff',
   itemTextColor: '#ffffff',
+  itemBackgroundColor: 'gray',
 };
 
 export const commonStyle = {
@@ -71,14 +72,13 @@ export const buttonStyle = {
     borderRadius: 25,
     marginVertical: 10,
     paddingVertical: 13,
-    elevation : 5
+    elevation: 5,
   },
   buttonText: {
     color: colorStyle.buttonTextColor,
     fontSize: 16,
     fontWeight: '500',
     textAlign: 'center',
-    fontWeight: "700"
   },
 };
 
@@ -102,7 +102,7 @@ export const itemStyle = {
   centerMain: {
     justifyContent: 'center',
     flex: 1,
-    alignItems: 'center'
+    alignItems: 'center',
   },
   title: {
     color: colorStyle.itemTitleColor,
@@ -139,5 +139,63 @@ export const drawerContentStyle = {
   text: {
     color: 'white',
     fontSize: 18,
+  },
+};
+
+export const emergencyPoints = {
+  place: {width: 50, height: 40, borderRadius: 100 / 8},
+  headers: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    padding: 10,
+  },
+  headerText: {fontSize: 25, color: colorStyle.itemTitleColor},
+  item: {
+    backgroundColor: colorStyle.itemBackgroundColor,
+    paddingRight: 30,
+    paddingLeft: 10,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: 5,
+    padding: 10,
+    borderRadius: 100 / 8,
+  },
+  itemText: {
+    fontSize: 20,
+    color: colorStyle.itemTextColor,
+  },
+  icon: {
+    fontSize: 20,
+  },
+};
+export const instantEarthquakes = {
+  mainHeader: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    padding: 10,
+  },
+  headerText: {
+    fontSize: 20,
+    color: colorStyle.itemTitleColor,
+  },
+  headers: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingLeft: 40,
+    paddingRight: 10,
+  },
+  headersText: {fontSize: 15, color: colorStyle.itemTitleColor},
+  itemText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  item: {
+    backgroundColor: colorStyle.itemBackgroundColor,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    margin: 5,
+    padding: 10,
+    paddingRight: 30,
+    borderRadius: 100 / 8,
   },
 };

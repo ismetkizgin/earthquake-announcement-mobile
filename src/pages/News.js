@@ -1,6 +1,6 @@
 import React from 'react';
-import {SafeAreaView, FlatList, TouchableOpacity} from 'react-native';
-import {Item} from '../components';
+import {SafeAreaView, FlatList, View} from 'react-native';
+import {DetailBlock} from '../components';
 import {commonStyle} from '../util';
 const DATA = [
   {
@@ -26,15 +26,18 @@ const DATA = [
   },
 ];
 
-export const News = () => {
+export const News = ({navigation}) => {
   return (
     <SafeAreaView style={commonStyle.container}>
       <FlatList
         data={DATA}
         renderItem={({item}) => (
-          <TouchableOpacity>
-            <Item text={item.text} title={item.title} source={item.source} />
-          </TouchableOpacity>
+          <DetailBlock
+            text={item.text}
+            title={item.title}
+            source={item.source}
+            navigation={navigation}
+          />
         )}
         keyExtractor={item => item.id}
       />
