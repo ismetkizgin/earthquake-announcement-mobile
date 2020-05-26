@@ -8,10 +8,18 @@ import {
   DrawerContent,
   Profile,
   Contacts,
+  RescueWorks,
 } from '../components';
-import {RescueWorkListView} from '../components/RescueWorkListView';
 
-import { Intro, Login, Entry, Register } from '../pages'
+import {
+  Intro,
+  Login,
+  Entry,
+  Register,
+  News,
+  InstantEarthquakes,
+  EmergencyPoints,
+} from '../pages';
 
 const IntroStack = createStackNavigator();
 const Stack = createStackNavigator();
@@ -21,7 +29,7 @@ const Drawer = createDrawerNavigator();
 const DrawerNavigator = () => (
   <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
     <Drawer.Screen
-      name="Main"
+      name="home"
       component={Home}
       options={{
         title: 'Ailem Güvende',
@@ -48,8 +56,35 @@ const DrawerNavigator = () => (
       }}
     />
     <Drawer.Screen
-      name="rescueWorkListView"
-      component={RescueWorkListView}
+      name="instantEarthquakes"
+      component={InstantEarthquakes}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: {backgroundColor: 'black'},
+      }}
+    />
+    <Drawer.Screen
+      name="emergencyPoints"
+      component={EmergencyPoints}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: {backgroundColor: 'black'},
+      }}
+    />
+    <Drawer.Screen
+      name="rescueWorks"
+      component={RescueWorks}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: {backgroundColor: 'black'},
+      }}
+    />
+    <Drawer.Screen
+      name="news"
+      component={News}
       options={{
         title: 'Ailem Güvende',
         headerTintColor: 'white',
@@ -115,7 +150,7 @@ export const Routes = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Intro">
-      <Stack.Screen
+        <Stack.Screen
           name="Intro"
           component={IntroNavigator}
           options={{
