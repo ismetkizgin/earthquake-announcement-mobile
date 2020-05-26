@@ -1,6 +1,13 @@
 import React from 'react';
-import {SafeAreaView, FlatList, Text, View, StyleSheet} from 'react-native';
-import {commonStyle} from '../util';
+import {
+  SafeAreaView,
+  FlatList,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
+import {commonStyle, emergencyPoints} from '../util';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 const DATA = [
   {
@@ -23,15 +30,21 @@ const DATA = [
 export const EmergencyPoints = () => {
   return (
     <SafeAreaView style={commonStyle.container}>
-      <View style={styles.headers}>
-        <Text style={styles.headerText}>ACİL DURUM NOKTALARI</Text>
+      <View style={emergencyPoints.headers}>
+        <Text style={emergencyPoints.headerText}>ACİL DURUM NOKTALARI</Text>
       </View>
       <FlatList
         data={DATA}
         renderItem={({item}) => (
-          <View style={styles.item}>
-            <Text style={styles.itemText}>{item.locationName}</Text>
-            <FontAwesome5 style={styles.icon} name={'comments'} />
+          <View style={emergencyPoints.item}>
+            <Image
+              style={emergencyPoints.place}
+              source={require('../assets/ship.jpeg')}
+            />
+            <Text style={emergencyPoints.itemText}>{item.locationName}</Text>
+            <TouchableOpacity>
+              <FontAwesome5 style={emergencyPoints.icon} name={'comments'} />
+            </TouchableOpacity>
           </View>
         )}
         keyExtractor={item => item.id}
@@ -39,27 +52,3 @@ export const EmergencyPoints = () => {
     </SafeAreaView>
   );
 };
-const styles = StyleSheet.create({
-  headers: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    padding: 10,
-  },
-  headerText: {fontSize: 25, color: 'gray'},
-  item: {
-    backgroundColor: 'gray',
-    paddingRight: 30,
-    paddingLeft: 10,
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    margin: 5,
-    padding: 10,
-    borderRadius: 100 / 8,
-  },
-  itemText: {
-    fontSize: 20,
-  },
-  icon: {
-    fontSize: 20,
-  },
-});
