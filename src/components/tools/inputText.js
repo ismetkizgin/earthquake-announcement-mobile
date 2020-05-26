@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { TextInput, View } from "react-native";
-import { commonStyle } from '../../util'
+import { inputStyle } from '../../util'
 
 const propTypes = {
     mapElement: PropTypes.func,
@@ -52,7 +52,7 @@ export class InputText extends Component {
         return (
             <View>
                 <TextInput
-                    style={commonStyle.inputBox}
+                    style={inputStyle.inputBox}
                     underlineColorAndroid="rgba(0,0,0,0)"
                     placeholder={placeholder}
                     placeholderTextColor="rgba(255,255,255,0.8)"

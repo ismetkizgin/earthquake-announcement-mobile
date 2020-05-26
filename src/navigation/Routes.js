@@ -5,16 +5,13 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import {
   Home,
-  Login,
-  Register,
-  Entry,
   DrawerContent,
   Profile,
   Contacts,
 } from '../components';
 import {RescueWorkListView} from '../components/RescueWorkListView';
 
-import { Intro } from '../pages'
+import { Intro, Login, Entry, Register } from '../pages'
 
 const IntroStack = createStackNavigator();
 const Stack = createStackNavigator();
