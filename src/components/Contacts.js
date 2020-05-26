@@ -8,6 +8,8 @@ import {
   TouchableOpacity,
   Image,
 } from 'react-native';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -27,6 +29,9 @@ function Item({text}) {
     <View style={styles.item}>
       <Image source={require('../assets/icon.png')} style={styles.image} />
       <Text style={styles.text}>{text}</Text>
+      <TouchableOpacity>
+        <FontAwesome5 style={styles.icon} name={'minus-circle'} color="white" />
+      </TouchableOpacity>
     </View>
   );
 }
@@ -36,7 +41,7 @@ export const Contacts = () => {
       <FlatList
         data={DATA}
         renderItem={({item}) => (
-          <TouchableOpacity>
+          <TouchableOpacity style={{flexDirection: 'row'}}>
             <Item text={item.text} />
           </TouchableOpacity>
         )}
@@ -48,12 +53,15 @@ export const Contacts = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 1,
+    backgroundColor: '#202325',
   },
   item: {
     backgroundColor: '#202325',
     padding: 5,
     flexDirection: 'row',
+    borderBottomColor: '#5f9ea0',
+    borderWidth: 1,
+    alignItems: 'center',
   },
   text: {
     color: 'white',
@@ -63,5 +71,11 @@ const styles = StyleSheet.create({
   image: {
     width: 50,
     height: 50,
+  },
+  icon: {
+    fontSize: 20,
+    color: 'red',
+    marginLeft: 150,
+    marginRight: 20,
   },
 });
