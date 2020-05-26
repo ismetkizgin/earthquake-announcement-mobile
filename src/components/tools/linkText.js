@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { View, Text, TouchableOpacity } from "react-native";
-import { commonStyle } from '../../util'
+import { linkText } from '../../util'
 
 const propTypes = {
     onPress: PropTypes.func,
@@ -10,7 +10,7 @@ const propTypes = {
 
 const defaultProps = {
     name: "Link Name",
-    style: commonStyle.textLink
+    style: linkText.textLink
 };
 
 export class LinkText extends Component {

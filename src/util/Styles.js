@@ -26,11 +26,6 @@ export const commonStyle = {
     alignItems: 'center',
     margin: 30,
   },
-  textLink: {
-    color: colorStyle.textColor,
-    fontSize: 18,
-    padding: 10
-  },
   titleStyle: {
     h1: {
       color: colorStyle.textColor,
@@ -42,6 +37,14 @@ export const commonStyle = {
       color: colorStyle.textColor,
       fontSize: 23,
     }
+  }
+}
+
+export const linkText = {
+  linkText: {
+    color: colorStyle.textColor,
+    fontSize: 18,
+    padding: 10
   }
 }
 
