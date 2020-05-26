@@ -9,17 +9,16 @@ const propTypes = {
 };
 
 const defaultProps = {
-    name: "Link Name",
-    style: linkText.textLink
+    name: "Link Name"
 };
 
 export class LinkText extends Component {
     render() {
-        const { onPress, name, style } = this.props;
+        const { onPress, name } = this.props;
         return (
             <View>
                 <TouchableOpacity>
-                    <Text style={style}>{name}</Text>
+                    <Text style={linkText.linkText}>{name}</Text>
                 </TouchableOpacity>
             </View>
         );
