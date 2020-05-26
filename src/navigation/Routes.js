@@ -6,7 +6,6 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {
   Home,
   DrawerContent,
-  Profile,
   Contacts,
 } from '../components';
 
@@ -18,6 +17,7 @@ import {
   News,
   InstantEarthquakes,
   EmergencyPoints,
+  Profile,
   NewsContent,
   RescueWorks,
 } from '../pages';
