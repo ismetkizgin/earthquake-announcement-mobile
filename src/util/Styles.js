@@ -1,4 +1,4 @@
-import {Dimensions} from 'react-native';
+import { Dimensions } from 'react-native';
 const deviceSize = Dimensions.get('window');
 
 export const colorStyle = {
@@ -123,14 +123,12 @@ export const itemStyle = {
 };
 export const drawerContentStyle = {
   userInfoSection: {
-    marginLeft: 70,
+    backgroundColor: "#455a64",
     fontSize: 16,
-    marginTop: 3,
     fontWeight: 'bold',
+    marginTop: -5
   },
   title: {
-    marginLeft: 70,
-    marginTop: 20,
     fontSize: 20,
     flexDirection: 'row',
     alignItems: 'center',
@@ -143,13 +141,20 @@ export const drawerContentStyle = {
 };
 
 export const emergencyPoints = {
-  place: {width: 50, height: 40, borderRadius: 100 / 8},
+  place: {
+    width: 50,
+    height: 40,
+    borderRadius: 100 / 8
+  },
   headers: {
     flexDirection: 'row',
     justifyContent: 'center',
     padding: 10,
   },
-  headerText: {fontSize: 25, color: colorStyle.itemTitleColor},
+  headerText: {
+    fontSize: 25,
+    color: colorStyle.itemTitleColor
+  },
   item: {
     backgroundColor: colorStyle.itemBackgroundColor,
     paddingRight: 30,
@@ -184,7 +189,7 @@ export const instantEarthquakes = {
     paddingLeft: 40,
     paddingRight: 10,
   },
-  headersText: {fontSize: 15, color: colorStyle.itemTitleColor},
+  headersText: { fontSize: 15, color: colorStyle.itemTitleColor },
   itemText: {
     flexDirection: 'row',
     justifyContent: 'space-between',
