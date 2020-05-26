@@ -33,10 +33,10 @@ const DATA = [
 ];
 function Item({text, title, source}) {
   return (
-    <View>
-      <Text style={styles.title}>{title}</Text>
-      <View style={styles.item}>
-        <Image source={require('../assets/ship.jpeg')} style={styles.image} />
+    <View style={styles.item}>
+      <Image source={require('../assets/ship.jpeg')} style={styles.image} />
+      <View>
+        <Text style={styles.title}>{title}</Text>
         <Text style={styles.text}>{text}</Text>
       </View>
     </View>
@@ -60,10 +60,12 @@ export const RescueWorkListView = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 20,
     backgroundColor: '#202325',
   },
   item: {
+    padding: 10,
+    borderBottomColor: '#5f9ea0',
+    borderWidth: 1,
     flexDirection: 'row',
   },
   title: {
@@ -79,10 +81,10 @@ const styles = StyleSheet.create({
   },
 
   image: {
-    marginTop: 10,
+    marginTop: 30,
     flexDirection: 'column',
     alignItems: 'center',
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 120,
   },
 });
