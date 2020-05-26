@@ -25,7 +25,7 @@ export const DrawerContent = ({props, navigation}) => {
             </View>
             <DrawerItem
               icon={({color, size}) => (
-                <Icon name="home" color={'white'} size={20} />
+                <Icon name="home" color={'white'} size={size} />
               )}
               labelStyle={drawerContentStyle.text}
               label="Anasayfa"
@@ -35,7 +35,7 @@ export const DrawerContent = ({props, navigation}) => {
             />
             <DrawerItem
               icon={({color, size}) => (
-                <Icon name="shield-alt" color={'white'} size={20} />
+                <Icon name="user-alt" color={'white'} size={size} />
               )}
               labelStyle={drawerContentStyle.text}
               label="Profil"
@@ -45,7 +45,7 @@ export const DrawerContent = ({props, navigation}) => {
             />
             <DrawerItem
               icon={({color, size}) => (
-                <Icon name="users" color={'white'} size={20} />
+                <Icon name="users" color={'white'} size={size} />
               )}
               labelStyle={drawerContentStyle.text}
               label="Kişilerim"
@@ -55,7 +55,7 @@ export const DrawerContent = ({props, navigation}) => {
             />
             <DrawerItem
               icon={({color, size}) => (
-                <Icon name="heartbeat" color={'white'} size={20} />
+                <Icon name="squarespace" color={'white'} size={size} />
               )}
               labelStyle={drawerContentStyle.text}
               label="Anlık Deprem İzleme"
@@ -65,7 +65,7 @@ export const DrawerContent = ({props, navigation}) => {
             />
             <DrawerItem
               icon={({color, size}) => (
-                <Icon name="exclamation" color={'white'} size={20} />
+                <Icon name="map-marked-alt" color={'white'} size={size} />
               )}
               labelStyle={drawerContentStyle.text}
               label="Acil Durum Noktaları"
@@ -75,7 +75,7 @@ export const DrawerContent = ({props, navigation}) => {
             />
             <DrawerItem
               icon={({color, size}) => (
-                <Icon name="shield-alt" color={'white'} size={20} />
+                <Icon name="heartbeat" color={'white'} size={size} />
               )}
               labelStyle={drawerContentStyle.text}
               label="Kurtarma Çalışmaları"
@@ -85,7 +85,7 @@ export const DrawerContent = ({props, navigation}) => {
             />
             <DrawerItem
               icon={({color, size}) => (
-                <Icon name="newspaper" color={'white'} size={20} />
+                <Icon name="newspaper" color={'white'} size={size} />
               )}
               labelStyle={drawerContentStyle.text}
               label="Haberler"
@@ -99,7 +99,7 @@ export const DrawerContent = ({props, navigation}) => {
       <Drawer.Section styles={drawerContentStyle.bottomDrawerSection}>
         <DrawerItem
           icon={({color, size}) => (
-            <Icon name="sign-out-alt" color={'white'} size={20} />
+            <Icon name="sign-out-alt" color={'white'} size={size} />
           )}
           labelStyle={drawerContentStyle.text}
           label="Sign Out"
