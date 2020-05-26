@@ -19,6 +19,7 @@ import {
   News,
   InstantEarthquakes,
   EmergencyPoints,
+  NewsContent,
 } from '../pages';
 
 const IntroStack = createStackNavigator();
@@ -85,6 +86,15 @@ const DrawerNavigator = () => (
     <Drawer.Screen
       name="news"
       component={News}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: {backgroundColor: 'black'},
+      }}
+    />
+    <Drawer.Screen
+      name="newsContent"
+      component={NewsContent}
       options={{
         title: 'Ailem Güvende',
         headerTintColor: 'white',
