@@ -1,16 +1,16 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View} from 'react-native';
 import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
 import {Avatar, Title, Drawer} from 'react-native-paper';
-
+import {commonStyle, drawerContentStyle} from '../util';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export const DrawerContent = ({props, navigation}) => {
   return (
-    <View style={{flex: 1, backgroundColor: '#202325'}}>
+    <View style={commonStyle.container}>
       <DrawerContentScrollView {...props}>
-        <View style={styles.drawerContent}>
-          <View style={styles.userInfoSection}>
+        <View style={drawerContentStyle.drawerContent}>
+          <View style={drawerContentStyle.userInfoSection}>
             <Avatar.Image
               source={{
                 uri:
@@ -21,13 +21,23 @@ export const DrawerContent = ({props, navigation}) => {
           </View>
           <Drawer.Section>
             <View>
-              <Title style={styles.title}>Alihan Akçam</Title>
+              <Title style={drawerContentStyle.title}>Alihan Akçam</Title>
             </View>
+            <DrawerItem
+              icon={({color, size}) => (
+                <Icon name="home" color={'white'} size={size} />
+              )}
+              labelStyle={drawerContentStyle.text}
+              label="Anasayfa"
+              onPress={() => {
+                navigation.navigate('home');
+              }}
+            />
             <DrawerItem
               icon={({color, size}) => (
                 <Icon name="profile" color={'white'} size={size} />
               )}
-              labelStyle={styles.text}
+              labelStyle={drawerContentStyle.text}
               label="Profil"
               onPress={() => {
                 navigation.navigate('profile');
@@ -37,7 +47,7 @@ export const DrawerContent = ({props, navigation}) => {
               icon={({color, size}) => (
                 <Icon name="persons" color={'white'} size={size} />
               )}
-              labelStyle={styles.text}
+              labelStyle={drawerContentStyle.text}
               label="Kişilerim"
               onPress={() => {
                 navigation.navigate('contacts');
@@ -47,45 +57,51 @@ export const DrawerContent = ({props, navigation}) => {
               icon={({color, size}) => (
                 <Icon name="earth" color={'white'} size={size} />
               )}
-              labelStyle={styles.text}
+              labelStyle={drawerContentStyle.text}
               label="Anlık Deprem İzleme"
-              onPress={() => {}}
+              onPress={() => {
+                navigation.navigate('instantEarthquakes');
+              }}
             />
             <DrawerItem
               icon={({color, size}) => (
                 <Icon name="account-network" color={'white'} size={size} />
               )}
-              labelStyle={styles.text}
+              labelStyle={drawerContentStyle.text}
               label="Acil Durum Noktaları"
-              onPress={() => {}}
+              onPress={() => {
+                navigation.navigate('emergencyPoints');
+              }}
             />
             <DrawerItem
               icon={({color, size}) => (
                 <Icon name="worker" color={'white'} size={size} />
               )}
-              labelStyle={styles.text}
+              labelStyle={drawerContentStyle.text}
               label="Kurtarma Çalışmaları"
               onPress={() => {
-                navigation.navigate('rescueWorkListView');
+                navigation.navigate('rescueWorks');
               }}
             />
             <DrawerItem
               icon={({color, size}) => (
                 <Icon name="home-outline" color={'white'} size={size} />
               )}
-              labelStyle={styles.text}
+              labelStyle={drawerContentStyle.text}
               label="Haberler"
-              onPress={() => {}}
+              onPress={() => {
+                navigation.navigate('news');
+              }}
             />
           </Drawer.Section>
         </View>
       </DrawerContentScrollView>
-      <Drawer.Section styles={styles.bottomDrawerSection}>
+      <Drawer.Section styles={drawerContentStyle.bottomDrawerSection}>
         <DrawerItem
           icon={({color, size}) => (
             <Icon name="exit-to-app" color={'white'} size={size} />
           )}
-          labelStyle={styles.text}
+          labelStyle={drawerContentStyle.text}
           label="Sign Out"
           onPress={() => {}}
         />
@@ -93,32 +109,3 @@ export const DrawerContent = ({props, navigation}) => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  drawerContent: {
-    flex: 1,
-  },
-  userInfoSection: {
-    marginLeft: 70,
-    fontSize: 16,
-    marginTop: 3,
-    fontWeight: 'bold',
-  },
-  bottomDrawerSection: {
-    marginBottom: 15,
-    borderTopColor: '#f4f4f4',
-    borderTopWidth: 1,
-  },
-  title: {
-    marginLeft: 70,
-    marginTop: 20,
-    fontSize: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-    color: 'white',
-  },
-  text: {
-    color: 'white',
-    fontSize: 18,
-  },
-});
