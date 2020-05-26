@@ -1,8 +1,7 @@
 import React from 'react';
-import { SafeAreaView, FlatList, TouchableOpacity, View } from 'react-native';
-import { DetailBlock } from '.';
+import { SafeAreaView, FlatList } from 'react-native';
+import { DetailBlock } from '../components';
 import { commonStyle } from '../util';
-import { ScrollView } from 'react-native-gesture-handler';
 const DATA = [
   {
     id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
@@ -30,13 +29,13 @@ const DATA = [
 export const RescueWorks = () => {
   return (
     <SafeAreaView style={commonStyle.container}>
-        <FlatList
-          data={DATA}
-          renderItem={({ item }) => (
-            <DetailBlock text={item.text} title={item.title} source={item.source} />
-          )}
-          keyExtractor={item => item.id}
-        />
+      <FlatList
+        data={DATA}
+        renderItem={({ item }) => (
+          <DetailBlock text={item.text} title={item.title} source={item.source} />
+        )}
+        keyExtractor={item => item.id}
+      />
     </SafeAreaView>
   );
 };

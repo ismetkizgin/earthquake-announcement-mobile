@@ -6,3 +6,5 @@ export * from './News';
 export * from './NewsContent';
 export * from './InstantEarthquakes';
 export * from './EmergencyPoints';
+export * from './RescueWorks';
+

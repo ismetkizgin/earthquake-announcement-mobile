@@ -8,7 +8,6 @@ import {
   DrawerContent,
   Profile,
   Contacts,
-  RescueWorks,
 } from '../components';
 
 import {
@@ -20,6 +19,7 @@ import {
   InstantEarthquakes,
   EmergencyPoints,
   NewsContent,
+  RescueWorks,
 } from '../pages';
 
 const IntroStack = createStackNavigator();
