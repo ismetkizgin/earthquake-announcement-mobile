@@ -4,14 +4,13 @@ import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
 import {
-  Home,
   DrawerContent,
-  Contacts,
 } from '../components';
 
 import {
   Intro,
   Login,
+  Home,
   Entry,
   Register,
   News,
@@ -19,6 +18,7 @@ import {
   EmergencyPoints,
   Profile,
   NewsContent,
+  Contacts,
   RescueWorks,
 } from '../pages';
 
