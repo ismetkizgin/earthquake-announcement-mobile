@@ -6,5 +6,5 @@ export * from './Contacts';
 export * from './tools/inputText';
 export * from './tools/button';
 export * from './tools/linkText';
-export * from './Item';
+export * from './DetailBlock';
 export * from './Logo';
