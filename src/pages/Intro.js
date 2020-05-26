@@ -1,9 +1,10 @@
-import React, { Component, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { View, Image } from 'react-native';
 
 import { commonStyle } from '../util'
 import AsyncStorage from '@react-native-community/async-storage';
 import { StackActions } from '@react-navigation/native';
+import { Logo } from '../components'
 
 export const Intro = ({ navigation }) => {
 
@@ -23,12 +24,9 @@ export const Intro = ({ navigation }) => {
 
 
   return (
-    <View style={commonStyle.centerMain}>
-      <View style={commonStyle.centerContainer}>
-        <Image
-          source={require('../assets/icon.png')}
-          style={commonStyle.image}
-        />
+    <View style={commonStyle.container}>
+      <View style={commonStyle.centerMain}>
+        <Logo />
       </View>
     </View>
   );
