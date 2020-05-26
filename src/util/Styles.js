@@ -4,18 +4,14 @@ const deviceSize = Dimensions.get('window');
 export const colorStyle = {
   textColor: '#ffffff',
   //bodyBackgroundColor: '#1c313a',
-  bodyBackgroundColor: '#455a64',
-  buttonBackgroundColor: '#1c313a',
+  bodyBackgroundColor: '#1c313a',
+  buttonBackgroundColor: '#455a64',
   buttonTextColor: '#ffffff',
-  inputBackgroundColor: 'rgba(255,255,255,0.2)',
+  inputBackgroundColor: 'rgba(255,255,255,0.3)',
   inputTextColor: '#ffffff',
-  itemColor: '#3a444b',
-  itemTitleColor: 'white',
-  itemTextColor: 'white',
-};
-
-export const fontStyle = {
-  inputFontSize: 16,
+  itemColor: 'rgba(255,255,255,0.08)',
+  itemTitleColor: '#ffffff',
+  itemTextColor: '#ffffff',
 };
 
 export const commonStyle = {
@@ -41,6 +37,11 @@ export const commonStyle = {
       fontSize: 23,
     },
   },
+  linkText: {
+    color: colorStyle.textColor,
+    fontSize: 18,
+    padding: 10,
+  },
 };
 
 export const linkText = {
@@ -57,7 +58,7 @@ export const inputStyle = {
     backgroundColor: colorStyle.inputBackgroundColor,
     borderRadius: 25,
     paddingHorizontal: 16,
-    fontSize: fontStyle.inputFontSize,
+    fontSize: 16,
     color: colorStyle.inputTextColor,
     marginVertical: 10,
   },
@@ -70,12 +71,14 @@ export const buttonStyle = {
     borderRadius: 25,
     marginVertical: 10,
     paddingVertical: 13,
+    elevation : 5
   },
   buttonText: {
     color: colorStyle.buttonTextColor,
     fontSize: 16,
     fontWeight: '500',
     textAlign: 'center',
+    fontWeight: "700"
   },
 };
 
@@ -89,11 +92,17 @@ export const logoStyle = {
 
 export const itemStyle = {
   item: {
+    width: deviceSize.width * 0.95,
     backgroundColor: colorStyle.itemColor,
-    margin: 10,
+    margin: 5,
     borderRadius: 100 / 7,
     padding: 10,
     flexDirection: 'column',
+  },
+  centerMain: {
+    justifyContent: 'center',
+    flex: 1,
+    alignItems: 'center'
   },
   title: {
     color: colorStyle.itemTitleColor,
@@ -108,7 +117,7 @@ export const itemStyle = {
   image: {
     flexDirection: 'column',
     alignItems: 'center',
-    width: deviceSize.width - 42,
+    width: deviceSize.width * 0.9,
     height: 120,
   },
 };
