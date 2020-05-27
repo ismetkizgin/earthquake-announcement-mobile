@@ -1,5 +1,5 @@
 import React from 'react';
-import {SafeAreaView, FlatList, View} from 'react-native';
+import {SafeAreaView, FlatList} from 'react-native';
 import {DetailBlock} from '../components';
 import {commonStyle} from '../util';
 const DATA = [
