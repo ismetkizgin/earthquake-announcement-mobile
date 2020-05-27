@@ -1,9 +1,9 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
-import {NavigationContainer} from '@react-navigation/native';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-
-import {DrawerContent} from '../components';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { colorStyle } from '../util'
+import { DrawerContent } from '../components';
 
 import {
   Intro,
@@ -34,81 +34,83 @@ const DrawerNavigator = () => (
       options={{
         title: 'Ailem Güvende',
         headerTintColor: 'white',
-        headerStyle: {backgroundColor: 'black'},
-      }}
-    />
-    <Drawer.Screen
-      name="profile"
-      component={Profile}
-      options={{
-        title: 'Ailem Güvende',
-        headerTintColor: 'white',
-        headerStyle: {backgroundColor: 'black'},
-      }}
-    />
-    <Drawer.Screen
-      name="contacts"
-      component={Contacts}
-      options={{
-        title: 'Ailem Güvende',
-        headerTintColor: 'white',
-        headerStyle: {backgroundColor: 'black'},
-      }}
-    />
-    <Drawer.Screen
-      name="instantEarthquakes"
-      component={InstantEarthquakes}
-      options={{
-        title: 'Ailem Güvende',
-        headerTintColor: 'white',
-        headerStyle: {backgroundColor: 'black'},
-      }}
-    />
-    <Drawer.Screen
-      name="emergencyPoints"
-      component={EmergencyPoints}
-      options={{
-        title: 'Ailem Güvende',
-        headerTintColor: 'white',
-        headerStyle: {backgroundColor: 'black'},
-      }}
-    />
-    <Drawer.Screen
-      name="rescueWorks"
-      component={RescueWorks}
-      options={{
-        title: 'Ailem Güvende',
-        headerTintColor: 'white',
-        headerStyle: {backgroundColor: 'black'},
-      }}
-    />
-    <Drawer.Screen
-      name="news"
-      component={News}
-      options={{
-        title: 'Ailem Güvende',
-        headerTintColor: 'white',
-        headerStyle: {backgroundColor: 'black'},
-      }}
-    />
-    <Drawer.Screen
-      name="newsContent"
-      component={NewsContent}
-      options={{
-        title: 'Ailem Güvende',
-        headerTintColor: 'white',
-        headerStyle: {backgroundColor: 'black'},
-      }}
-    />
-    <Drawer.Screen
-      name="rescueWorksContent"
-      component={RescueWorksContent}
-      options={{
-        title: 'Ailem Güvende',
-        headerTintColor: 'white',
-        headerStyle: {backgroundColor: 'black'},
-      }}
-    />
+        headerStyle: {
+          backgroundColor: colorStyle.headerBackgroundColor},
+        }
+      }
+        />
+        <Drawer.Screen
+          name="profile"
+          component={Profile}
+          options={{
+            title: 'Ailem Güvende',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: colorStyle.headerBackgroundColor },
+          }}
+        />
+        <Drawer.Screen
+          name="contacts"
+          component={Contacts}
+          options={{
+            title: 'Ailem Güvende',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: 'black' },
+          }}
+        />
+        <Drawer.Screen
+          name="instantEarthquakes"
+          component={InstantEarthquakes}
+          options={{
+            title: 'Ailem Güvende',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: 'black' },
+          }}
+        />
+        <Drawer.Screen
+          name="emergencyPoints"
+          component={EmergencyPoints}
+          options={{
+            title: 'Ailem Güvende',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: 'black' },
+          }}
+        />
+        <Drawer.Screen
+          name="rescueWorks"
+          component={RescueWorks}
+          options={{
+            title: 'Ailem Güvende',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: 'black' },
+          }}
+        />
+        <Drawer.Screen
+          name="news"
+          component={News}
+          options={{
+            title: 'Ailem Güvende',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: 'black' },
+          }}
+        />
+        <Drawer.Screen
+          name="newsContent"
+          component={NewsContent}
+          options={{
+            title: 'Ailem Güvende',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: 'black' },
+          }}
+        />
+        <Drawer.Screen
+          name="rescueWorksContent"
+          component={RescueWorksContent}
+          options={{
+            title: 'Ailem Güvende',
+            headerTintColor: 'white',
+            headerStyle: { backgroundColor: 'black' },
+          }}
+        />
   </Drawer.Navigator>
 );
 
@@ -119,9 +121,6 @@ const StackNavigator = () => {
         name="Entry"
         component={Entry}
         options={{
-          title: 'Ailem Güvende',
-          headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'black'},
           headerShown: false,
         }}
       />
@@ -131,7 +130,7 @@ const StackNavigator = () => {
         options={{
           title: 'Ailem Güvende',
           headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'black'},
+          headerStyle: { backgroundColor: colorStyle.headerBackgroundColor },
         }}
       />
       <SecondStack.Screen
@@ -140,7 +139,7 @@ const StackNavigator = () => {
         options={{
           title: 'Ailem Güvende',
           headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'black'},
+          headerStyle: { backgroundColor: colorStyle.headerBackgroundColor },
         }}
       />
     </SecondStack.Navigator>
@@ -156,7 +155,7 @@ const IntroNavigator = () => {
         options={{
           title: 'Ailem Güvende',
           headerTintColor: 'white',
-          headerStyle: {backgroundColor: 'black'},
+          headerStyle: { backgroundColor: 'black' },
           headerShown: false,
         }}
       />
@@ -174,7 +173,7 @@ export const Routes = () => {
           options={{
             title: 'Ailem Güvende',
             headerTintColor: 'white',
-            headerStyle: {backgroundColor: 'black'},
+            headerStyle: { backgroundColor: 'black' },
             headerShown: false,
           }}
         />
@@ -185,7 +184,7 @@ export const Routes = () => {
           options={{
             title: 'Ailem Güvende',
             headerTintColor: 'white',
-            headerStyle: {backgroundColor: 'black'},
+            headerStyle: { backgroundColor: 'black' },
             headerShown: false,
           }}
         />
@@ -196,7 +195,7 @@ export const Routes = () => {
           options={{
             title: 'Ailem Güvende',
             headerTintColor: 'white',
-            headerStyle: {backgroundColor: 'black'},
+            headerStyle: { backgroundColor: 'black' },
             headerShown: false,
           }}
         />
