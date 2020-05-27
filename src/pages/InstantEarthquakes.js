@@ -63,25 +63,27 @@ const DATA = [
 export const InstantEarthquakes = () => {
   return (
     <SafeAreaView style={commonStyle.container}>
-      <View style={instantEarthquakes.mainHeader}>
-        <Text style={instantEarthquakes.headerText}>SON DEPREMLER</Text>
-      </View>
-      <View style={instantEarthquakes.headers}>
-        <Text style={instantEarthquakes.headersText}>Yer</Text>
-        <Text style={instantEarthquakes.headersText}>Tarih</Text>
-        <Text style={instantEarthquakes.headersText}>Saat</Text>
-        <Text style={instantEarthquakes.headersText}>Derinlik</Text>
-        <Text style={instantEarthquakes.headersText}>Büyüklük</Text>
-      </View>
       <FlatList
         data={DATA}
         renderItem={({item}) => (
           <View style={instantEarthquakes.item}>
-            <Text>{item.location}</Text>
-            <Text>{item.date}</Text>
-            <Text style={{paddingRight: 30}}>{item.time}</Text>
-            <Text style={{paddingRight: 50}}>{item.depth}</Text>
-            <Text>{item.size}</Text>
+            <View style={instantEarthquakes.location}>
+              <Text style={instantEarthquakes.locationName}>
+                {item.location}
+              </Text>
+            </View>
+            <View style={instantEarthquakes.headers}>
+              <Text style={instantEarthquakes.headersText}>Tarih</Text>
+              <Text style={instantEarthquakes.headersText}>Saat</Text>
+              <Text style={instantEarthquakes.headersText}>Derinlik</Text>
+              <Text style={instantEarthquakes.headersText}>Büyüklük</Text>
+            </View>
+            <View style={instantEarthquakes.data}>
+              <Text>{item.date}</Text>
+              <Text style={instantEarthquakes.time}>{item.time}</Text>
+              <Text style={instantEarthquakes.depth}>{item.depth}</Text>
+              <Text>{item.size}</Text>
+            </View>
           </View>
         )}
         keyExtractor={item => item.id}
