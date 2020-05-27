@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, SafeAreaView} from 'react-native';
+import {ScrollView, Text, Image, SafeAreaView} from 'react-native';
 import {commonStyle, content} from '../util';
 import PropTypes from 'prop-types';
 
@@ -22,11 +22,18 @@ export class Content extends Component {
 
     return (
       <SafeAreaView style={commonStyle.container}>
-        <View>
+        <ScrollView
+          style={{
+            backgroundColor: 'rgba(255,255,255,0.08)',
+            margin: 15,
+            borderRadius: 100 / 7,
+            padding: 10,
+            flexDirection: 'column',
+          }}>
           <Image style={content.image} source={{uri: source}} />
           <Text style={content.header}>{title}</Text>
           <Text style={content.content}>{text}</Text>
-        </View>
+        </ScrollView>
       </SafeAreaView>
     );
   }
