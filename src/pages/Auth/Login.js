@@ -1,31 +1,48 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { commonStyle } from '../../util'
-import { StackActions } from '@react-navigation/native';
-import AsyncStorage from '@react-native-community/async-storage';
-import { InputText, Button, LinkText } from '../../components'
+import { InputText, Button } from '../../components'
+import { SignIn } from '../../actions/auth.actions'
+import { Formik } from 'formik';
 
-const storeData = async (value) => {
-  try {
-    await AsyncStorage.setItem('@token', value)
-    console.log('token', await AsyncStorage.getItem('@token'));
-  } catch (e) {
-  }
-}
 
 export const Login = ({ navigation }) => {
   return (
     <View style={commonStyle.container}>
       <View style={commonStyle.centerMain}>
+
         <Text style={commonStyle.titleStyle.h1}>Giriş Yap</Text>
-        <InputText placeholder="T.C No" />
-        <InputText placeholder="Şifre" />
-        <Button onPress={() => {
-              storeData("ismet")
-              navigation.dispatch(StackActions.replace('drawer'))
-            }} name="Giriş Yap" />
-        <LinkText name="Şifremi Unuttum" />
+        <Formik
+          initialValues={{ UserIdentityNo: '', UserPassword: '' }}
+          onSubmit={async (values) => {
+            const state = await SignIn(values);
+            if (state)
+              navigation.dispatch(StackActions.replace('drawer'));
+          }}
+        >
+          {props => (
+            <View>
+              <InputText
+                placeholder='T.C. No'
+                onChangeText={props.handleChange('UserIdentityNo')}
+                value={props.values.UserIdentityNo}
+                keyboardType='numeric'
+                maxLength={11}
+
+              />
+
+              <InputText
+                placeholder="Şifre"
+                onChangeText={props.handleChange('UserPassword')}
+                secureTextEntry={true}
+                value={props.values.UserPassword}
+              />
+
+              <Button name="Giriş Yap" onPress={props.handleSubmit} />
+            </View>
+          )}
+        </Formik>
       </View>
-    </View>
+    </View >
   );
 };
