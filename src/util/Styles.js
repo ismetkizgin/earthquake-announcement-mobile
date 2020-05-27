@@ -12,7 +12,7 @@ export const colorStyle = {
   itemColor: 'rgba(255,255,255,0.08)',
   itemTitleColor: '#ffffff',
   itemTextColor: '#ffffff',
-  itemBackgroundColor: 'gray',
+  itemBackgroundColor: '#455a64',
 };
 
 export const commonStyle = {
@@ -142,47 +142,35 @@ export const drawerContentStyle = {
 
 export const emergencyPoints = {
   place: {
-    width: 50,
-    height: 40,
+    width: deviceSize.width * 0.93,
+    height: 70,
     borderRadius: 100 / 8,
-  },
-  headers: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    padding: 10,
-  },
-  headerText: {
-    fontSize: 25,
-    color: colorStyle.itemTitleColor,
   },
   item: {
     backgroundColor: colorStyle.itemBackgroundColor,
     paddingRight: 30,
     paddingLeft: 10,
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     margin: 5,
     padding: 10,
     borderRadius: 100 / 8,
+  },
+  section: {
+    padding: 5,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   itemText: {
     fontSize: 20,
     color: colorStyle.itemTextColor,
   },
   icon: {
+    color: 'white',
     fontSize: 20,
   },
 };
 export const instantEarthquakes = {
-  mainHeader: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    padding: 10,
-  },
-  headerText: {
-    fontSize: 20,
-    color: colorStyle.itemTitleColor,
-  },
   headers: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -194,15 +182,30 @@ export const instantEarthquakes = {
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  location: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+  },
+  locationName: {
+    fontSize: 20,
+  },
   item: {
     backgroundColor: colorStyle.itemBackgroundColor,
-    flexDirection: 'row',
+    flexDirection: 'column',
     justifyContent: 'space-between',
     margin: 5,
     padding: 10,
     paddingRight: 30,
     borderRadius: 100 / 8,
   },
+  data: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingLeft: 15,
+    paddingRight: 30,
+  },
+  time: {marginRight: 20},
+  depth: {marginRight: 65},
 };
 export const content = {
   header: {
@@ -216,7 +219,8 @@ export const content = {
     padding: 10,
   },
   image: {
-    width: deviceSize.width,
+    width: deviceSize.width * 0.88,
     height: 200,
+    borderRadius: 100 / 7,
   },
 };
