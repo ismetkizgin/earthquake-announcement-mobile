@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { View, Image } from 'react-native';
+import { View } from 'react-native';
 
 import { commonStyle } from '../util'
 import AsyncStorage from '@react-native-community/async-storage';
