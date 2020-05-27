@@ -13,6 +13,7 @@ export const colorStyle = {
   itemTitleColor: '#ffffff',
   itemTextColor: '#ffffff',
   itemBackgroundColor: '#455a64',
+  headerBackgroundColor:'#455a64'
 };
 
 export const commonStyle = {
