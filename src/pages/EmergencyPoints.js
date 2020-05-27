@@ -6,8 +6,9 @@ import {
   View,
   Image,
   TouchableOpacity,
+  TextInput,
 } from 'react-native';
-import {commonStyle, emergencyPoints} from '../util';
+import {commonStyle, emergencyPoints, inputStyle} from '../util';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 const DATA = [
   {
@@ -30,9 +31,7 @@ const DATA = [
 export const EmergencyPoints = () => {
   return (
     <SafeAreaView style={commonStyle.container}>
-      <View style={emergencyPoints.headers}>
-        <Text style={emergencyPoints.headerText}>ACİL DURUM NOKTALARI</Text>
-      </View>
+      <TextInput style={inputStyle.inputBox} placeholder={'Ara...'} />
       <FlatList
         data={DATA}
         renderItem={({item}) => (
@@ -41,10 +40,12 @@ export const EmergencyPoints = () => {
               style={emergencyPoints.place}
               source={require('../assets/ship.jpeg')}
             />
-            <Text style={emergencyPoints.itemText}>{item.locationName}</Text>
-            <TouchableOpacity>
-              <FontAwesome5 style={emergencyPoints.icon} name={'comments'} />
-            </TouchableOpacity>
+            <View style={emergencyPoints.section}>
+              <Text style={emergencyPoints.itemText}>{item.locationName}</Text>
+              <TouchableOpacity>
+                <FontAwesome5 style={emergencyPoints.icon} name={'comments'} />
+              </TouchableOpacity>
+            </View>
           </View>
         )}
         keyExtractor={item => item.id}
