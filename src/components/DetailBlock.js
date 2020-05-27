@@ -7,7 +7,6 @@ const propTypes = {
   title: PropTypes.string,
   text: PropTypes.string,
   source: PropTypes.string,
-  navigation: PropTypes.navigate,
 };
 
 const defaultProps = {
