@@ -5,3 +5,4 @@ export * from './tools/linkText';
 export * from './DetailBlock';
 export * from './Logo';
 export * from './Content';
+export * from './Header';
