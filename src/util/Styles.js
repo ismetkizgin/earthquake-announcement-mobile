@@ -1,4 +1,4 @@
-import { Dimensions } from 'react-native';
+import {Dimensions} from 'react-native';
 const deviceSize = Dimensions.get('window');
 
 export const colorStyle = {
@@ -123,10 +123,10 @@ export const itemStyle = {
 };
 export const drawerContentStyle = {
   userInfoSection: {
-    backgroundColor: "#455a64",
+    backgroundColor: '#455a64',
     fontSize: 16,
     fontWeight: 'bold',
-    marginTop: -5
+    marginTop: -5,
   },
   title: {
     fontSize: 20,
@@ -144,7 +144,7 @@ export const emergencyPoints = {
   place: {
     width: 50,
     height: 40,
-    borderRadius: 100 / 8
+    borderRadius: 100 / 8,
   },
   headers: {
     flexDirection: 'row',
@@ -153,7 +153,7 @@ export const emergencyPoints = {
   },
   headerText: {
     fontSize: 25,
-    color: colorStyle.itemTitleColor
+    color: colorStyle.itemTitleColor,
   },
   item: {
     backgroundColor: colorStyle.itemBackgroundColor,
@@ -189,7 +189,7 @@ export const instantEarthquakes = {
     paddingLeft: 40,
     paddingRight: 10,
   },
-  headersText: { fontSize: 15, color: colorStyle.itemTitleColor },
+  headersText: {fontSize: 15, color: colorStyle.itemTitleColor},
   itemText: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -202,5 +202,21 @@ export const instantEarthquakes = {
     padding: 10,
     paddingRight: 30,
     borderRadius: 100 / 8,
+  },
+};
+export const content = {
+  header: {
+    fontSize: 20,
+    color: 'white',
+    padding: 10,
+  },
+  content: {
+    fontSize: 15,
+    color: 'white',
+    padding: 10,
+  },
+  image: {
+    width: deviceSize.width,
+    height: 200,
   },
 };
