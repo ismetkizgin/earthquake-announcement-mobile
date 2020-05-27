@@ -3,9 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
-import {
-  DrawerContent,
-} from '../components';
+import {DrawerContent} from '../components';
 
 import {
   Intro,
@@ -20,6 +18,7 @@ import {
   NewsContent,
   Contacts,
   RescueWorks,
+  RescueWorksContent,
 } from '../pages';
 
 const IntroStack = createStackNavigator();
@@ -95,6 +94,15 @@ const DrawerNavigator = () => (
     <Drawer.Screen
       name="newsContent"
       component={NewsContent}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: {backgroundColor: 'black'},
+      }}
+    />
+    <Drawer.Screen
+      name="rescueWorksContent"
+      component={RescueWorksContent}
       options={{
         title: 'Ailem Güvende',
         headerTintColor: 'white',
