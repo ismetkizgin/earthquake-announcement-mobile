@@ -13,7 +13,7 @@ export const colorStyle = {
   itemTitleColor: '#ffffff',
   itemTextColor: '#ffffff',
   itemBackgroundColor: '#455a64',
-  headerBackgroundColor:'#455a64'
+  headerBackgroundColor: '#455a64',
 };
 
 export const commonStyle = {
@@ -25,7 +25,7 @@ export const commonStyle = {
     justifyContent: 'center',
     flex: 1,
     alignItems: 'center',
-    margin: 30,
+    margin: 10,
   },
   titleStyle: {
     h1: {
@@ -127,7 +127,6 @@ export const drawerContentStyle = {
     backgroundColor: '#455a64',
     fontSize: 16,
     fontWeight: 'bold',
-    marginTop: -5,
   },
   title: {
     fontSize: 20,
@@ -138,6 +137,12 @@ export const drawerContentStyle = {
   text: {
     color: 'white',
     fontSize: 18,
+  },
+  centerMain: {
+    justifyContent: 'center',
+    flex: 1,
+    alignItems: 'center',
+    paddingVertical: 100,
   },
 };
 
