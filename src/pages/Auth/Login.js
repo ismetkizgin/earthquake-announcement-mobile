@@ -4,6 +4,7 @@ import { commonStyle } from '../../util'
 import { InputText, Button } from '../../components'
 import { SignIn } from '../../actions/auth.actions'
 import { Formik } from 'formik';
+import { StackActions } from '@react-navigation/native';
 
 
 export const Login = ({ navigation }) => {
