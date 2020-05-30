@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { colorStyle } from '../util'
 import { DrawerContent } from '../components';
+import Icon from 'react-native-vector-icons/FontAwesome5';
+import { DrawerActions } from '@react-navigation/native';
 
 import {
   Intro,
@@ -15,10 +17,9 @@ import {
   InstantEarthquakes,
   EmergencyPoints,
   Profile,
-  NewsContent,
   Contacts,
   RescueWorks,
-  RescueWorksContent,
+  Detail,
 } from '../pages';
 
 const IntroStack = createStackNavigator();
@@ -35,82 +36,74 @@ const DrawerNavigator = () => (
         title: 'Ailem Güvende',
         headerTintColor: 'white',
         headerStyle: {
-          backgroundColor: colorStyle.headerBackgroundColor},
-        }
+          backgroundColor: colorStyle.headerBackgroundColor
+        },
       }
-        />
-        <Drawer.Screen
-          name="profile"
-          component={Profile}
-          options={{
-            title: 'Ailem Güvende',
-            headerTintColor: 'white',
-            headerStyle: { backgroundColor: colorStyle.headerBackgroundColor },
-          }}
-        />
-        <Drawer.Screen
-          name="contacts"
-          component={Contacts}
-          options={{
-            title: 'Ailem Güvende',
-            headerTintColor: 'white',
-            headerStyle: { backgroundColor: 'black' },
-          }}
-        />
-        <Drawer.Screen
-          name="instantEarthquakes"
-          component={InstantEarthquakes}
-          options={{
-            title: 'Ailem Güvende',
-            headerTintColor: 'white',
-            headerStyle: { backgroundColor: 'black' },
-          }}
-        />
-        <Drawer.Screen
-          name="emergencyPoints"
-          component={EmergencyPoints}
-          options={{
-            title: 'Ailem Güvende',
-            headerTintColor: 'white',
-            headerStyle: { backgroundColor: 'black' },
-          }}
-        />
-        <Drawer.Screen
-          name="rescueWorks"
-          component={RescueWorks}
-          options={{
-            title: 'Ailem Güvende',
-            headerTintColor: 'white',
-            headerStyle: { backgroundColor: 'black' },
-          }}
-        />
-        <Drawer.Screen
-          name="news"
-          component={News}
-          options={{
-            title: 'Ailem Güvende',
-            headerTintColor: 'white',
-            headerStyle: { backgroundColor: 'black' },
-          }}
-        />
-        <Drawer.Screen
-          name="newsContent"
-          component={NewsContent}
-          options={{
-            title: 'Ailem Güvende',
-            headerTintColor: 'white',
-            headerStyle: { backgroundColor: 'black' },
-          }}
-        />
-        <Drawer.Screen
-          name="rescueWorksContent"
-          component={RescueWorksContent}
-          options={{
-            title: 'Ailem Güvende',
-            headerTintColor: 'white',
-            headerStyle: { backgroundColor: 'black' },
-          }}
-        />
+      }
+    />
+    <Drawer.Screen
+      name="profile"
+      component={Profile}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: colorStyle.headerBackgroundColor },
+      }}
+    />
+    <Drawer.Screen
+      name="contacts"
+      component={Contacts}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'black' },
+      }}
+    />
+    <Drawer.Screen
+      name="instantEarthquakes"
+      component={InstantEarthquakes}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'black' },
+      }}
+    />
+    <Drawer.Screen
+      name="emergencyPoints"
+      component={EmergencyPoints}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'black' },
+      }}
+    />
+    <Drawer.Screen
+      name="rescueWorks"
+      component={RescueWorks}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'black' },
+      }}
+    />
+    <Drawer.Screen
+      name="news"
+      component={News}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'black' },
+      }}
+    />
+    <Drawer.Screen
+      name="Detail"
+      component={Detail}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'black' },
+      }}
+    />
   </Drawer.Navigator>
 );
 
@@ -192,12 +185,26 @@ export const Routes = () => {
         <Stack.Screen
           name="drawer"
           component={DrawerNavigator}
-          options={{
+          options={({ navigation }) => ({
             title: 'Ailem Güvende',
             headerTintColor: 'white',
-            headerStyle: { backgroundColor: 'black' },
-            headerShown: false,
-          }}
+            headerStyle: {
+              backgroundColor: '#455a64',
+            },
+            headerTitleStyle: {
+              textAlign: 'center'
+            },
+            headerLeft: () => (
+              <Icon
+                style={{ padding: 10 }}
+                name="bars"
+                size={30}
+                color="white"
+                onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
+              />
+            ),
+            headerShown: true,
+          })}
         />
       </Stack.Navigator>
     </NavigationContainer>
