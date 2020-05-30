@@ -1,20 +1,49 @@
-import {Dimensions} from 'react-native';
-const deviceSize = Dimensions.get('window');
+import { Dimensions, Appearance } from 'react-native';
+const deviceSize = Dimensions.get('window'),
+  theme = Appearance.getColorScheme();
 
-export const colorStyle = {
-  textColor: '#ffffff',
-  //bodyBackgroundColor: '#1c313a',
-  bodyBackgroundColor: '#1c313a',
-  buttonBackgroundColor: '#455a64',
-  buttonTextColor: '#ffffff',
-  inputBackgroundColor: 'rgba(255,255,255,0.3)',
-  inputTextColor: '#ffffff',
-  itemColor: 'rgba(255,255,255,0.08)',
-  itemTitleColor: '#ffffff',
-  itemTextColor: '#ffffff',
-  itemBackgroundColor: '#455a64',
-  headerBackgroundColor: '#455a64',
-};
+let themeColor
+if (theme === "light") {
+  themeColor = {
+    textColor: '#3e3e3e',
+    bodyBackgroundColor: '#E1E9EE',
+    buttonBackgroundColor: '#858585',
+    buttonTextColor: '#ffffff',
+    inputBackgroundColor: 'rgba(100,100,100,0.4)',
+    inputTextColor: '#ffffff',
+    itemBackgroundColor: '#c2d9e8',
+    itemTitleColor: '#3e3e3e',
+    itemTextColor: '#3e3e3e',
+    headerBackgroundColor: '#455a64',
+    userInfoSectionBackgroundColor: '#c2d9e8',
+    userInfoSectionTitleColor: '#3e3e3e',
+    drawerMenuTextColor: '#3e3e3e',
+    drawerMenuIconColor: '#3e3e3e',
+    itemContentTitleColor: '#DCDCDC'
+  };
+}
+else {
+  themeColor = {
+    textColor: '#ffffff',
+    bodyBackgroundColor: '#1c313a',
+    buttonBackgroundColor: '#455a64',
+    buttonTextColor: '#ffffff',
+    inputBackgroundColor: 'rgba(255,255,255,0.3)',
+    inputTextColor: '#ffffff',
+    itemBackgroundColor: 'rgba(255,255,255,0.08)',
+    itemTitleColor: '#ffffff',
+    itemTextColor: '#ffffff',
+    itemBackgroundColor: '#455a64',
+    headerBackgroundColor: '#455a64',
+    userInfoSectionBackgroundColor: '#455a64',
+    userInfoSectionTitleColor: '#ffffff',
+    drawerMenuTextColor: '#ffffff',
+    drawerMenuIconColor: '#ffffff',
+    itemContentTitleColor: '#DCDCDC'
+  };
+}
+
+export const colorStyle = themeColor;
 
 export const commonStyle = {
   container: {
@@ -25,7 +54,7 @@ export const commonStyle = {
     justifyContent: 'center',
     flex: 1,
     alignItems: 'center',
-    margin: 10,
+    margin: 30,
   },
   titleStyle: {
     h1: {
@@ -44,6 +73,10 @@ export const commonStyle = {
     fontSize: 18,
     padding: 10,
   },
+  text: {
+    color: colorStyle.text,
+    fontSize: 16
+  }
 };
 
 export const linkText = {
@@ -94,7 +127,7 @@ export const logoStyle = {
 export const itemStyle = {
   item: {
     width: deviceSize.width * 0.95,
-    backgroundColor: colorStyle.itemColor,
+    backgroundColor: colorStyle.itemBackgroundColor,
     margin: 5,
     borderRadius: 100 / 7,
     padding: 10,
@@ -108,34 +141,47 @@ export const itemStyle = {
   title: {
     color: colorStyle.itemTitleColor,
     fontSize: 20,
-    padding: 10,
+    padding: 5,
+    fontWeight: 'bold'
   },
   text: {
     color: colorStyle.itemTextColor,
     fontSize: 15,
-    paddingLeft: 10,
+    padding: 5,
+    textAlign: 'justify'
   },
   image: {
     flexDirection: 'column',
     alignItems: 'center',
     width: deviceSize.width * 0.9,
-    height: 120,
+    height: 200,
+    borderRadius: 100 / 7
   },
+  itemDetail: {
+    backgroundColor: colorStyle.itemBackgroundColor,
+    margin: 15,
+    borderRadius: 100 / 7,
+    padding: 10,
+    flexDirection: 'column',
+    margin: 10
+  }
 };
+
 export const drawerContentStyle = {
   userInfoSection: {
-    backgroundColor: '#455a64',
+    backgroundColor: colorStyle.userInfoSectionBackgroundColor,
     fontSize: 16,
     fontWeight: 'bold',
+    marginTop: -5,
   },
   title: {
     fontSize: 20,
     flexDirection: 'row',
     alignItems: 'center',
-    color: 'white',
+    color: colorStyle.userInfoSectionTitleColor,
   },
   text: {
-    color: 'white',
+    color: colorStyle.drawerMenuTextColor,
     fontSize: 18,
   },
   centerMain: {
@@ -176,57 +222,56 @@ export const emergencyPoints = {
     fontSize: 20,
   },
 };
-export const instantEarthquakes = {
-  headers: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingLeft: 40,
-    paddingRight: 10,
-  },
-  headersText: {fontSize: 15, color: colorStyle.itemTitleColor},
-  itemText: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-  },
-  location: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-  },
-  locationName: {
-    fontSize: 20,
-  },
+
+export const instantEarthquakesStyle = {
   item: {
     backgroundColor: colorStyle.itemBackgroundColor,
-    flexDirection: 'column',
-    justifyContent: 'space-between',
-    margin: 5,
-    padding: 10,
-    paddingRight: 30,
-    borderRadius: 100 / 8,
+    borderRadius: 100 / 7,
+    margin: 10,
+    padding: 10
   },
-  data: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingLeft: 15,
-    paddingRight: 30,
-  },
-  time: {marginRight: 20},
-  depth: {marginRight: 65},
-};
-export const content = {
   header: {
+    alignItems: "center"
+  },
+  cityTitle: {
+
     fontSize: 20,
-    color: 'white',
-    padding: 10,
+    color: colorStyle.itemTitleColor,
+    fontWeight: "bold"
+  },
+  timeContent: {
+    textAlign: "center",
+    alignItems: "center",
+    marginBottom: 10
+  },
+  timeText: {
+    color: colorStyle.itemTextColor,
+    fontSize: 12
   },
   content: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 5,
+  },
+  contentTitle: {
+    color: colorStyle.itemContentTitleColor,
+    fontSize: 12,
+    textAlign: "center"
+  },
+  contentText: {
+    color: colorStyle.itemTextColor,
     fontSize: 15,
-    color: 'white',
-    padding: 10,
-  },
-  image: {
-    width: deviceSize.width * 0.88,
-    height: 200,
-    borderRadius: 100 / 7,
-  },
+    textAlign: "center",
+    fontWeight: "bold"
+  }
 };
+
+export const slideStyle = {
+  image: {
+    width: deviceSize.width,
+    height: deviceSize.height / 2.5
+  },
+  containerSlide: {
+    height: deviceSize.height / 2.5
+  }
+}
