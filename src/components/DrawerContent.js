@@ -46,7 +46,7 @@ export const DrawerContent = ({ props, navigation }) => {
             onPress={() => {
               navigation.navigate('home', { title: 'Home' });
             }}
-            
+
           />
           <DrawerItem
             icon={({ color, size }) => (
@@ -106,6 +106,16 @@ export const DrawerContent = ({ props, navigation }) => {
             label="Haberler"
             onPress={() => {
               navigation.navigate('news');
+            }}
+          />
+          <DrawerItem
+            icon={({ color, size }) => (
+              <Icon name="server" color={colorStyle.drawerMenuIconColor} size={size} />
+            )}
+            labelStyle={drawerContentStyle.text}
+            label="GRPC"
+            onPress={() => {
+              navigation.navigate('grpc');
             }}
           />
           <DrawerItem

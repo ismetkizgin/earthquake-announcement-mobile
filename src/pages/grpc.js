@@ -1,25 +1,22 @@
-import React, {useState} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
-const {
-  AttendanceServicePromiseClient,
-} = require('../../helloworld_grpc_web_pb');
-const {RecordRequest} = require('../../helloworld_pb');
-import {studentID} from './components/studentID';
+const { AttendanceServicePromiseClient } = require('../../helloworld_grpc_web_pb');
+const { RecordRequest } = require('../../helloworld_pb');
 
-var grpcAdress = '10.0.2.2:50051';
-
-function App() {
+export const grpc = () => {
   const [statementMessage, setStatementMessage] = useState('empty');
 
-  const serverUrl = grpcAdress;
-  const promiseClient = new AttendanceServicePromiseClient(
-    serverUrl,
-    null,
-    null,
-  );
+  const serverUrl = 'http://10.0.2.2:9090';
+  
 
   const callGrpcServicePromise = async () => {
+    console.log(serverUrl)
+    const promiseClient = new AttendanceServicePromiseClient(
+      serverUrl,
+      null,
+      null,
+    );
     const request = new RecordRequest();
     request.setName('Alihan');
     try {
@@ -31,7 +28,10 @@ function App() {
     }
   };
 
-  callGrpcServicePromise();
+  useEffect(() => {
+    callGrpcServicePromise();
+  });
+
 
   return (
     <>

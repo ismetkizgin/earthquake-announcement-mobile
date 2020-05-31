@@ -21,7 +21,7 @@ import {
   RescueWorks,
   Detail,
 } from '../pages';
-
+import {grpc} from '../pages/grpc'
 const IntroStack = createStackNavigator();
 const Stack = createStackNavigator();
 const SecondStack = createStackNavigator();
@@ -98,6 +98,15 @@ const DrawerNavigator = () => (
     <Drawer.Screen
       name="Detail"
       component={Detail}
+      options={{
+        title: 'Ailem Güvende',
+        headerTintColor: 'white',
+        headerStyle: { backgroundColor: 'black' },
+      }}
+    />
+    <Drawer.Screen
+      name="grpc"
+      component={grpc}
       options={{
         title: 'Ailem Güvende',
         headerTintColor: 'white',
