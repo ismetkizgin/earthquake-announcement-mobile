@@ -1,11 +1,26 @@
-import React from 'react';
-import {View} from 'react-native';
-import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
-import {Avatar, Title, Drawer} from 'react-native-paper';
-import {commonStyle, drawerContentStyle} from '../util';
+import React, { useEffect, useState } from 'react';
+import { View } from 'react-native';
+import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer';
+import { Avatar, Title, Drawer } from 'react-native-paper';
+import { commonStyle, drawerContentStyle, colorStyle } from '../util';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import AsyncStorage from '@react-native-community/async-storage';
+import { StackActions } from '@react-navigation/native';
 
-export const DrawerContent = ({props, navigation}) => {
+export const DrawerContent = ({ props, navigation }) => {
+  const [name, setName] = useState();
+
+  userName = async () => {
+    let user = await AsyncStorage.getItem('@auth');
+    user = JSON.parse(user);
+    setName(`${user.UserFirstName} ${user.UserLastName}`);
+    console.log(name);
+  }
+
+  useEffect(() => {
+    userName()
+  }, [])
+
   return (
     <View style={commonStyle.container}>
       <View style={drawerContentStyle.userInfoSection}>
@@ -17,24 +32,25 @@ export const DrawerContent = ({props, navigation}) => {
             }}
             size={120}
           />
-          <Title style={drawerContentStyle.title}>İsmet Kizgin</Title>
+          <Title style={drawerContentStyle.title}>{name}</Title>
         </View>
       </View>
       <DrawerContentScrollView style={{}} {...props}>
         <Drawer.Section>
           <DrawerItem
-            icon={({color, size}) => (
-              <Icon name="home" color={'white'} size={size} />
+            icon={({ color, size }) => (
+              <Icon name="home" color={colorStyle.drawerMenuIconColor} size={size} />
             )}
             labelStyle={drawerContentStyle.text}
             label="Anasayfa"
             onPress={() => {
-              navigation.navigate('home', {title: 'Home'});
+              navigation.navigate('home', { title: 'Home' });
             }}
+            
           />
           <DrawerItem
-            icon={({color, size}) => (
-              <Icon name="user-alt" color={'white'} size={size} />
+            icon={({ color, size }) => (
+              <Icon name="user-alt" color={colorStyle.drawerMenuIconColor} size={size} />
             )}
             labelStyle={drawerContentStyle.text}
             label="Profil"
@@ -44,7 +60,7 @@ export const DrawerContent = ({props, navigation}) => {
           />
           {/* <DrawerItem
               icon={({ color, size }) => (
-                <Icon name="users" color={'white'} size={size} />
+                <Icon name="users" color={colorStyle.drawerMenuIconColor} size={size} />
               )}
               labelStyle={drawerContentStyle.text}
               label="Kişilerim"
@@ -53,8 +69,8 @@ export const DrawerContent = ({props, navigation}) => {
               }}
             /> */}
           <DrawerItem
-            icon={({color, size}) => (
-              <Icon name="squarespace" color={'white'} size={size} />
+            icon={({ color, size }) => (
+              <Icon name="squarespace" color={colorStyle.drawerMenuIconColor} size={size} />
             )}
             labelStyle={drawerContentStyle.text}
             label="Anlık Deprem İzleme"
@@ -63,8 +79,8 @@ export const DrawerContent = ({props, navigation}) => {
             }}
           />
           <DrawerItem
-            icon={({color, size}) => (
-              <Icon name="map-marked-alt" color={'white'} size={size} />
+            icon={({ color, size }) => (
+              <Icon name="map-marked-alt" color={colorStyle.drawerMenuIconColor} size={size} />
             )}
             labelStyle={drawerContentStyle.text}
             label="Acil Durum Noktaları"
@@ -73,8 +89,8 @@ export const DrawerContent = ({props, navigation}) => {
             }}
           />
           <DrawerItem
-            icon={({color, size}) => (
-              <Icon name="heartbeat" color={'white'} size={size} />
+            icon={({ color, size }) => (
+              <Icon name="heartbeat" color={colorStyle.drawerMenuIconColor} size={size} />
             )}
             labelStyle={drawerContentStyle.text}
             label="Kurtarma Çalışmaları"
@@ -83,8 +99,8 @@ export const DrawerContent = ({props, navigation}) => {
             }}
           />
           <DrawerItem
-            icon={({color, size}) => (
-              <Icon name="newspaper" color={'white'} size={size} />
+            icon={({ color, size }) => (
+              <Icon name="newspaper" color={colorStyle.drawerMenuIconColor} size={size} />
             )}
             labelStyle={drawerContentStyle.text}
             label="Haberler"
@@ -93,12 +109,15 @@ export const DrawerContent = ({props, navigation}) => {
             }}
           />
           <DrawerItem
-            icon={({color, size}) => (
-              <Icon name="sign-out-alt" color={'white'} size={size} />
+            icon={({ color, size }) => (
+              <Icon name="sign-out-alt" color={colorStyle.drawerMenuIconColor} size={size} />
             )}
             labelStyle={drawerContentStyle.text}
-            label="Sign Out"
-            onPress={() => {}}
+            label="Çıkış Yap"
+            onPress={async () => {
+              await AsyncStorage.clear();
+              navigation.dispatch(StackActions.replace('Auth'));
+            }}
           />
         </Drawer.Section>
       </DrawerContentScrollView>
