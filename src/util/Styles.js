@@ -6,20 +6,20 @@ let themeColor
 if (theme === "light") {
   themeColor = {
     textColor: '#3e3e3e',
-    bodyBackgroundColor: '#E1E9EE',
-    buttonBackgroundColor: '#858585',
+    bodyBackgroundColor: '#ffffff',
+    buttonBackgroundColor: '#bd0100',
     buttonTextColor: '#ffffff',
     inputBackgroundColor: 'rgba(100,100,100,0.4)',
     inputTextColor: '#ffffff',
-    itemBackgroundColor: '#c2d9e8',
+    itemBackgroundColor: '#ecf7fe',
     itemTitleColor: '#3e3e3e',
     itemTextColor: '#3e3e3e',
-    headerBackgroundColor: '#455a64',
+    headerBackgroundColor: '#ffffff',
     userInfoSectionBackgroundColor: '#c2d9e8',
     userInfoSectionTitleColor: '#3e3e3e',
     drawerMenuTextColor: '#3e3e3e',
     drawerMenuIconColor: '#3e3e3e',
-    itemContentTitleColor: '#DCDCDC'
+    itemContentTitleColor: '#000',
   };
 }
 else {
@@ -39,7 +39,7 @@ else {
     userInfoSectionTitleColor: '#ffffff',
     drawerMenuTextColor: '#ffffff',
     drawerMenuIconColor: '#ffffff',
-    itemContentTitleColor: '#DCDCDC'
+    itemContentTitleColor: '#DCDCDC',
   };
 }
 
@@ -234,7 +234,6 @@ export const instantEarthquakesStyle = {
     alignItems: "center"
   },
   cityTitle: {
-
     fontSize: 20,
     color: colorStyle.itemTitleColor,
     fontWeight: "bold"
@@ -263,15 +262,17 @@ export const instantEarthquakesStyle = {
     fontSize: 15,
     textAlign: "center",
     fontWeight: "bold"
+  },
+  container: {
+    flex: 1,
+    flexDirection: 'column'
+  },
+  halfHeight: {
+    flex: .5,
+    backgroundColor: '#FF3366'
+  },
+  quarterHeight: {
+    flex: .25,
+    backgroundColor: '#000'
   }
 };
-
-export const slideStyle = {
-  image: {
-    width: deviceSize.width,
-    height: deviceSize.height / 2.5
-  },
-  containerSlide: {
-    height: deviceSize.height / 2.5
-  }
-}
