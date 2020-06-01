@@ -7,3 +7,11 @@ export const InstantEarthquakesList = async () => {
 
     return false;
 }
+
+export const InstantEarthquakesPieceList = async () => {
+    const result = await fetchApi("/InstantEarthquakes/10", "GET", null, 200);
+    if (result != null)
+        return result
+
+    return false;
+}
