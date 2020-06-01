@@ -196,9 +196,9 @@ export const Routes = () => {
           component={DrawerNavigator}
           options={({ navigation }) => ({
             title: 'Ailem Güvende',
-            headerTintColor: 'white',
+            headerTintColor: colorStyle.textColor,
             headerStyle: {
-              backgroundColor: '#455a64',
+              backgroundColor: colorStyle.headerBackgroundColor,
             },
             headerTitleStyle: {
               textAlign: 'center'
@@ -208,7 +208,7 @@ export const Routes = () => {
                 style={{ padding: 10 }}
                 name="bars"
                 size={30}
-                color="white"
+                color={colorStyle.textColor}
                 onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}
               />
             ),
