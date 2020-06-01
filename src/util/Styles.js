@@ -157,6 +157,9 @@ export const itemStyle = {
     height: 200,
     borderRadius: 100 / 7
   },
+  homeImage: {
+    height: deviceSize.height *0.5
+  },
   itemDetail: {
     backgroundColor: colorStyle.itemBackgroundColor,
     margin: 15,
@@ -228,7 +231,8 @@ export const instantEarthquakesStyle = {
     backgroundColor: colorStyle.itemBackgroundColor,
     borderRadius: 100 / 7,
     margin: 10,
-    padding: 10
+    padding: 10,
+    height: deviceSize.height * 0.2
   },
   header: {
     alignItems: "center"
@@ -255,13 +259,15 @@ export const instantEarthquakesStyle = {
   contentTitle: {
     color: colorStyle.itemContentTitleColor,
     fontSize: 12,
-    textAlign: "center"
+    textAlign: "center",
+    marginBottom: -10
   },
   contentText: {
     color: colorStyle.itemTextColor,
     fontSize: 15,
     textAlign: "center",
-    fontWeight: "bold"
+    fontWeight: "bold",
+    margin:10
   },
   container: {
     flex: 1,
